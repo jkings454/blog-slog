@@ -1,0 +1,9 @@
+{%extends 'main.html'%}
+{%block content %}
+<div class = "container">
+  {% for post in posts %}
+  <h1>{{ post.title }}</h1>
+  <p>{{ post.content }}</h1>
+  {% endfor %}
+</div>
+{%endblock%}
