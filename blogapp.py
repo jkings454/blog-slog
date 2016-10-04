@@ -40,6 +40,6 @@ def new_post():
 
 
 if __name__ == "__main__":
-    app.run(debug=config.development["DEBUG"],
-     host=config.development["HOST"],
-     port=config.development["PORT"])
+    app.run(debug=config.production["DEBUG"],
+     host=config.production["HOST"],
+     port=config.production["PORT"])
