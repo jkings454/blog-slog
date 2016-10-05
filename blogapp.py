@@ -5,7 +5,7 @@ from models import Base, Post
 
 import config
 
-engine = create_engine(config.DB_URI)
+engine = create_engine(config.production["DB_URI"])
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
