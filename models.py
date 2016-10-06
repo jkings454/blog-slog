@@ -20,5 +20,5 @@ class Post(Base):
     user = relationship(User)
     id = Column(Integer, primary_key = True)
 
-engine = create_engine(config.production["DB_URI"])
+engine = create_engine(config.development["DB_URI"])
 Base.metadata.create_all(engine)

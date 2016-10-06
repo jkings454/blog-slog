@@ -5,7 +5,7 @@ from models import Base, Post
 
 import config
 
-engine = create_engine(config.production["DB_URI"])
+engine = create_engine(config.development["DB_URI"])
 Base.metadata.bind = engine
 DBSession = sessionmaker(bind=engine)
 session = DBSession()
@@ -40,6 +40,7 @@ def new_post():
 
 
 if __name__ == "__main__":
-    app.run(debug=config.production["DEBUG"],
-     host=config.production["HOST"],
-     port=config.production["PORT"])
+    app.secret_key = "my_super_secret_key"
+    app.run(debug=config.development["DEBUG"],
+     host=config.development["HOST"],
+     port=config.development["PORT"])
